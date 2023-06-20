@@ -2,29 +2,23 @@
 
 require ('functions.php');
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI']);
 
-switch ($uri) {
+$routes = [
 
-    case '/php-test/':
-        require ('controllers/index.php');
-        break;
+    '/php-test/' => 'controllers/index.php',
+    '/php-test/about.php' => 'controllers/about.php',
+    '/php-test/contact.php' => 'controllers/contact.php',
+    '/php-test/our-mission.php' => 'controllers/our-mission.php'
+];
 
-    case '/php-test/about.php':
-        require ('controllers/about.php');
-        break;
+if(array_key_exists($uri['path'], $routes)) {
 
-    case '/php-test/contact.php':
-        require ('controllers/contact.php');
-        break;
+    require $routes[$uri['path']];
 
-    case '/php-test/our-mission.php':
-        require ('controllers/our-mission.php');
-        break;
-        
-    default:
+} else {
 
-        // query params and 404 for now
-        
-        break;
+    // code...
+    // only 404 for now
 }
+
