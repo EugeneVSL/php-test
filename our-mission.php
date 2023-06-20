@@ -1,5 +1,6 @@
 <?php
 
+$heading = "Our Mission";
 
-
-    require "views/our-mission.view.php";
+require 'functions.php';
+require "views/our-mission.view.php";
