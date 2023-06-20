@@ -42,4 +42,4 @@
         return ($book['releaseYear'] >= 2018 && $book['releaseYear'] <= 2023);
     });
 
-    require 'index.view.php';
+    require 'views/index.view.php';

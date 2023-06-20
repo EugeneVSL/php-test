@@ -2,4 +2,4 @@
 
 
 
-    require "our-mission.view.php";
+    require "views/our-mission.view.php";
