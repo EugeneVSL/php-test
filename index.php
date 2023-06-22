@@ -1,19 +1,8 @@
 <?php
 
 require 'functions.php';
-// require 'router.php';
-
-$dsn = "mysql:host=localhost;port=3306;dbname=php-test;charset=utf8mb4";
-$usr = "";
-$pwd = "";
-
-$pdo = new PDO($dsn, $usr, $pwd);
-$statement = $pdo->prepare("select * from posts where id = :id");
-$statement->execute(['id' => 1]);
-$post = $statement->fetch(PDO::FETCH_ASSOC);
-
-echo "<li>" . $post['title'] . "</li>";
-
+require 'Database.php';
+require 'router.php';
 
 
 

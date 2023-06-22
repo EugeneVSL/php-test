@@ -6,6 +6,8 @@ $routes = [
 
     '/php-test/' => 'controllers/index.php',
     '/php-test/about.php' => 'controllers/about.php',
+    '/php-test/notes.php' => 'controllers/notes.php',
+    '/php-test/note.php' => 'controllers/note.php',
     '/php-test/contact.php' => 'controllers/contact.php',
     '/php-test/our-mission.php' => 'controllers/our-mission.php'
 ];
