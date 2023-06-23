@@ -21,12 +21,13 @@ class Database
 
             foreach ($params as $key => $value) {
 
-               $statement->bindParam($key, $value);
+               $statement->bindValue($key, $value);
             }
         }
 
         $statement->execute();
-        
+
+        // output the query and the query with values inserted
         return $statement;
     }
 }
