@@ -6,10 +6,14 @@ class Database
 
     public function __construct($configuration)
     {
-        $usr = $_ENV['DB_USERNAME'];
-        $pwd = $_ENV['DB_PASSWORD'];
+        // load environment variables
+        $env = parse_ini_file('.env');
+        $usr = $env['DB_USERNAME'];
+        $pwd = $env['DB_PASSWORD'];
 
         $dsn = "mysql:" . http_build_query($configuration, '', ';');
+
+        // connect to db
         $this->connection = new PDO($dsn, $usr, $pwd, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]);
