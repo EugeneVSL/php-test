@@ -4,8 +4,11 @@ class Database
 {
     public $connection;
 
-    public function __construct($configuration, $usr='php-test-usr', $pwd='GMn^7Vme0qY8')
+    public function __construct($configuration)
     {
+        $usr = $_ENV['DB_USERNAME'];
+        $pwd = $_ENV['DB_PASSWORD'];
+
         $dsn = "mysql:" . http_build_query($configuration, '', ';');
         $this->connection = new PDO($dsn, $usr, $pwd, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

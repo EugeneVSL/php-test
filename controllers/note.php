@@ -19,7 +19,7 @@ if (! $note) {
     abort();
 }
 
-// hardcoded userID for now
+// hardcode userID for now
 $userId = 2;
 
 // check the identity of the current user
