@@ -9,6 +9,6 @@ $db = new Database($configuration['database']);
 $heading = "My Notes";
 
 // get the notes for specific user
-$notes = $db->query("select * from notes where user_id = 2")->fetchAll();
+$notes = $db->query("select * from notes where user_id = 2")->get();
 
 require "views/notes.view.php";

@@ -11,16 +11,14 @@ $heading = "Note";
 // the note details
 $note = $db->query('select * from notes where id = :id', [
 
-        'id' => $_GET['id'],
+    'id' => $_GET['id'],
 
-])->fetch();
+])->findOrFail();
 
-if (! $note) {
-    abort();
-}
-
-// hardcode userID for now
+// hardcode the userID for now
 $userId = 2;
+
+authorize($note['user_id'] === $userId);
 
 // check the identity of the current user
 if($note['user_id'] !== $userId) {

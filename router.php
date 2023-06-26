@@ -1,17 +1,6 @@
 <?php
 
-$uri = parse_url($_SERVER['REQUEST_URI']);
-
-$routes = [
-
-    '/php-test/' => 'controllers/index.php',
-    '/php-test/about.php' => 'controllers/about.php',
-    '/php-test/notes.php' => 'controllers/notes.php',
-    '/php-test/note.php' => 'controllers/note.php',
-    '/php-test/contact.php' => 'controllers/contact.php',
-    '/php-test/our-mission.php' => 'controllers/our-mission.php'
-];
-
+$routes = require 'routes.php';
 
 function abort($statusCode = 404) {
 
@@ -32,5 +21,7 @@ function routeToController($routes, $uri) {
         abort();
     }
 }
+
+$uri = parse_url($_SERVER['REQUEST_URI']);
 
 routeToController($routes, $uri);
