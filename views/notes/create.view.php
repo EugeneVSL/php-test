@@ -1,6 +1,6 @@
-<?php require 'views/partials/header.php'; ?>
-<?php require 'views/partials/navigation.php'; ?>
-<?php require 'views/partials/banner.php'; ?>
+<?php require '../views/partials/header.php'; ?>
+<?php require '../views/partials/navigation.php'; ?>
+<?php require '../views/partials/banner.php'; ?>
 
 <main>
 
@@ -17,7 +17,7 @@
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><?= $_POST['body'] ?? '' ?></textarea>
 
                             <?php 
-                                if($errors && count($errors) != 0) {
+                                if(isset($errors) && count($errors) != 0) {
 
                                     foreach ($errors as $error) {
                                         echo "<p class='text-red-500 text-xs mt-2'>$error</p>";

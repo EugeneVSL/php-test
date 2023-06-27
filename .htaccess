@@ -1,7 +1,14 @@
+
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+
 <IfModule mod_rewrite.c>
 
-    RewriteEngine on
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /php-test/index.php?path=$1 [NC,L,QSA]
+    RewriteEngine ON
+
+    # redirect all requests to public directory
+    RewriteCond %{REQUEST_URI} !php-test/public/
+    RewriteRule (.*) /php-test/public/$1 [L]
+
 </IfModule>

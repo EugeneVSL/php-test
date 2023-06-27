@@ -21,3 +21,13 @@ function authorize($condition, $status = Response::FORBIDDEN) {
     }
 }
 
+function base_path($path) {
+
+    return dirname(__DIR__) . '/php-test/' . $path;
+}
+
+function view($path) {
+
+    return base_path('/views/') . $path;
+}
+

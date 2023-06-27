@@ -1,4 +1,3 @@
-
 <?php require 'partials/header.php'; ?>
 <?php require 'partials/navigation.php'; ?>
 <?php require 'partials/banner.php'; ?>

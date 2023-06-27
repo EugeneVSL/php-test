@@ -1,7 +1,7 @@
 <?php
 
 // get the data
-$configuration = require 'config.php';
+$configuration = require base_path('config.php');
 $db = new Database($configuration['database']);
 
 $heading = "Note";
@@ -23,4 +23,4 @@ if($note['user_id'] !== $userId) {
     abort(Response::FORBIDDEN);
 }
 
-require "views/notes/show.view.php";
+require view("notes/show.view.php");
