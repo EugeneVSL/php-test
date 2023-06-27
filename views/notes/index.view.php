@@ -1,6 +1,6 @@
-<?php require 'partials/header.php'; ?>
-<?php require 'partials/navigation.php'; ?>
-<?php require 'partials/banner.php'; ?>
+<?php require 'views/partials/header.php'; ?>
+<?php require 'views/partials/navigation.php'; ?>
+<?php require 'views/partials/banner.php'; ?>
 
     <main>
 
@@ -10,7 +10,7 @@
 
                 <?php foreach ($notes as $note) : ?>
 
-                    <li><a href="note.php?id=<?= htmlspecialchars($note['id']) ?>" class="text-blue-500 hover:underline"><?= $note['body'] ?></a></li>
+                    <li><a href="note?id=<?= htmlspecialchars($note['id']) ?>" class="text-blue-500 hover:underline"><?= $note['body'] ?></a></li>
                 
                 <?php endforeach; ?>
 
@@ -24,4 +24,4 @@
        
     </main>
 
-<?php require'partials/footer.php'; ?>
+<?php require'views/partials/footer.php'; ?>
