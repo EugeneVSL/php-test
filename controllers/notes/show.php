@@ -4,8 +4,6 @@
 $configuration = require base_path('config.php');
 $db = new Database($configuration['database']);
 
-$heading = "Note";
-
 // the note details
 $note = $db->query('select * from notes where id = :id', [
 
@@ -23,4 +21,7 @@ if($note['user_id'] !== $userId) {
     abort(Response::FORBIDDEN);
 }
 
-require view("notes/show.view.php");
+view("notes/show.view.php", [
+    'heading' => 'Note',
+    'note' => $note
+]);

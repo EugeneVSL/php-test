@@ -26,8 +26,13 @@ function base_path($path) {
     return dirname(__DIR__) . '/php-test/' . $path;
 }
 
-function view($path) {
+function view($path, $attributes = null) {
 
-    return base_path('/views/') . $path;
+    if(is_array($attributes)) {
+
+        extract($attributes);
+    }
+
+    require base_path('/views/') . $path;
 }
 
