@@ -27,6 +27,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             'user_id' => 2 // hardcode it for now
         ]);
     }
+
+    header('location: /php-test/notes');
+    exit();
 }
 
 require view("notes/create.view.php", [
