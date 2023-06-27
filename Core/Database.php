@@ -1,5 +1,9 @@
 <?php
 
+namespace Core;
+
+use PDO;
+
 class Database
 {
     public $connection;
@@ -8,7 +12,7 @@ class Database
     public function __construct($configuration)
     {
         // load environment variables
-        $env = parse_ini_file('.env');
+        $env = parse_ini_file(base_path('.env'));
         
         $usr = $env['DB_USERNAME'];
         $pwd = $env['DB_PASSWORD'];

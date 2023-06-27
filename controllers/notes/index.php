@@ -1,5 +1,7 @@
 <?php
 
+use Core\Database;
+
 $heading = "My Notes";
 
 // get the data

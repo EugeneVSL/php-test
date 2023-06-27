@@ -13,7 +13,7 @@ function urlIs($value) {
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-function authorize($condition, $status = Response::FORBIDDEN) {
+function authorize($condition, $status = Core\Response::FORBIDDEN) {
 
     if(! $condition) {
 
@@ -23,7 +23,7 @@ function authorize($condition, $status = Response::FORBIDDEN) {
 
 function base_path($path) {
 
-    return dirname(__DIR__) . '/php-test/' . $path;
+    return dirname(__DIR__) . '/' . $path;
 }
 
 function view($path, $attributes = null) {
