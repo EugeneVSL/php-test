@@ -10,7 +10,7 @@ $db = new Database($configuration['database']);
 // hardcode the userID for now
 $userId = 2;
 
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
+if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['_METHOD'] === "DELETE") {
 
 
     // the note details

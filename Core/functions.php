@@ -13,7 +13,8 @@ function urlIs($value) {
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-function authorize($condition, $status = Core\Response::FORBIDDEN) {
+function authorize($condition, $status = Core\Response::FORBIDDEN) 
+{
 
     if(! $condition) {
 
@@ -34,5 +35,15 @@ function view($path, $attributes = null) {
     }
 
     require base_path('/views/') . $path;
+}
+
+function abort($statusCode = 404) 
+{
+
+    // only 404 for now
+    http_response_code($statusCode);
+    view("{$statusCode}.php");
+
+    die();
 }
 
