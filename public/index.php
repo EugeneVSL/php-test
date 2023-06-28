@@ -10,6 +10,9 @@ spl_autoload_register(function($class) {
     require base_path("{$class}.php");
 });
 
+// hardcode it for now
+$userId = 2;
+
 $router = new \Core\Router();
 require base_path('routes.php');
 
