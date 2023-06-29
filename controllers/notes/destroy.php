@@ -1,13 +1,12 @@
 <?php
 
+use Core\App;
 use Core\Database;
 
 // hardcode it for now
 $userId = 2;
 
-// get the data
-$configuration = require base_path('config.php');
-$db = new Database($configuration['database']);
+$db = App::resolve(Database::class);
 
 // the note details
 $note = $db->query('select * from notes where id = :id', [

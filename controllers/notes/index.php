@@ -1,12 +1,11 @@
 <?php
 
+use Core\App;
 use Core\Database;
 
 $heading = "My Notes";
 
-// get the data
-$configuration = require base_path('config.php');
-$db = new Database($configuration['database']);
+$db = App::resolve(Database::class);
 
 // get the notes for specific user
 $notes = $db->query("select * from notes where user_id = 2")->get();

@@ -3,6 +3,11 @@
 require '../Core/functions.php';
 require base_path('config.php');
 require base_path('Core/Response.php');
+require base_path('Core/Container.php');
+require base_path('Core/Database.php');
+require base_path('Core/App.php');
+
+require base_path('bootstrap.php');
 
 spl_autoload_register(function($class) {
 

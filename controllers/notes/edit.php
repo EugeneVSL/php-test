@@ -2,7 +2,6 @@
 
 use Core\App;
 use Core\Database;
-use Core\Response;
 
 // hardcode it for now
 $userId = 2;
@@ -16,14 +15,10 @@ $note = $db->query('select * from notes where id = :id', [
 
 ])->findOrFail();
 
+
 authorize($note['user_id'] === $userId);
 
-// check the identity of the current user
-if ($note['user_id'] !== $userId) {
-    abort(Response::FORBIDDEN);
-}
-
-view("notes/show.view.php", [
-    'heading' => 'Note',
+view("notes/edit.view.php", [
+    'heading' => 'Edit Note',
     'note' => $note
 ]);

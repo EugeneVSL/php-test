@@ -7,11 +7,13 @@
 
             <p><?=  htmlspecialchars($note['body']) ?></p>
 
-            <form class="mt-6" method='POST'>
-                <input type="hidden" name="id" value='<?= $note['id'] ?>'>
-                <input type="hidden" name="_METHOD" value='DELETE'>
-                <button class="text-blue-500 hover:underline">Delete</button>
-            </form>
+            <div>
+
+                <footer class="mt-6">
+                    <a class="text-blue-500 hover:underline" href="note/edit?id=<?= $note['id'] ?>">Edit</a>
+                </footer>
+
+            </div>
 
         </div>
     </main>
