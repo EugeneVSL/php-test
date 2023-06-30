@@ -16,4 +16,9 @@ class Validator
     {
         return filter_var($value, FILTER_SANITIZE_EMAIL);
     }
+
+    public static function password($value) 
+    {
+        return $value;
+    }
 }

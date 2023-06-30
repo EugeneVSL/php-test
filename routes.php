@@ -6,6 +6,9 @@ $router->get('/php-test/contact', 'controllers/contact.php');
 $router->get('/php-test/our-mission', 'controllers/our-mission.php');
 
 
+// get notes
+$router->get('/php-test/notes', 'controllers/notes/index.php')->only('auth');
+
 
 // nagivate to adding note
 $router->get('/php-test/notes/create', 'controllers/notes/create.php');
@@ -23,9 +26,12 @@ $router->get('/php-test/note/edit', 'controllers/notes/edit.php');
 $router->patch('/php-test/note/edit', 'controllers/notes/update.php');
 
 // delete note
-$router->delete('/php-test/note', 'controllers/notes/destroy.php');
+$router->post('/php-test/note/destroy', 'controllers/notes/destroy.php');
 
 
 
-// get notes
-$router->get('/php-test/notes', 'controllers/notes/index.php');
+
+//user registration
+$router->get('/php-test/register', 'controllers/registration/create.php')->only('guest');
+$router->post('/php-test/register', 'controllers/registration/store.php');
+

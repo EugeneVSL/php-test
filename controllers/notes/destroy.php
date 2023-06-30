@@ -6,21 +6,23 @@ use Core\Database;
 // hardcode it for now
 $userId = 2;
 
-$db = App::resolve(Database::class);
+dd("Here");
 
-// the note details
-$note = $db->query('select * from notes where id = :id', [
+// $db = App::resolve(Database::class);
 
-    'id' => $_POST['id'],
+// // the note details
+// $note = $db->query('select * from notes where id = :id', [
 
-])->findOrFail();
+//     'id' => $_POST['id'],
 
-authorize($note['user_id'] === $userId);
+// ])->findOrFail();
 
-$db->query('delete from notes where id = :id', [
+// authorize($note['user_id'] === $userId);
 
-    'id' => $_POST['id']
-]);
+// $db->query('delete from notes where id = :id', [
 
-header('location: /php-test/notes');
-die();
+//     'id' => $_POST['id']
+// ]);
+
+// header('location: /php-test/notes');
+// die();

@@ -36,19 +36,21 @@
 
             <div class="mt-6 flex items-center justify-end gap-x-6">
 
-                <a href="/php-test/notes"
-                    class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Cancel</a>
-            
-                <button type="submit"
-                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
-            </div>
-        </form>
+                <div style="width: 50%;">
+                    <button id="delete" name="delete" formaction="/php-test/note/destroy" formmethod="POST" data-method="DELETE" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Delete</button>
+                </div>
 
-        <!-- <form class="mt-6" method='POST'>
-            <input type="hidden" name="id" value='<?= $note['id'] ?>'>
-            <input type="hidden" name="_METHOD" value='DELETE'>
-            <button class="text-blue-500 hover:underline">Delete</button>
-        </form> -->
+                <div style="width: 50%; text-align: right;">
+                    <a href="/php-test/notes"
+                        class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Cancel</a>
+                
+                    <button type="submit"
+                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
+                </div>
+
+            </div>
+               
+        </form>
 
     </div>
 
