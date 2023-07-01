@@ -54,3 +54,20 @@ function login($user) {
     ];
 }
 
+function logout() 
+{
+
+    // set session to null
+    $_SESSION = [];
+
+    // destroy session
+    session_destroy();
+
+    $params = session_get_cookie_params();
+
+    // delete any cookies created in the app
+    setcookie('PHPSESSID', '', time() - 3600, $params['path'], 
+        $params['domain'], $params['secure'], $params['httponly']);
+}
+
+

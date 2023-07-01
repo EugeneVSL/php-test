@@ -36,8 +36,10 @@ $router->get('/php-test/register', 'controllers/registration/create.php')->only(
 $router->post('/php-test/register', 'controllers/registration/store.php');
 
 // log in
-$router->get('/php-test/sessions', 'controllers/sessions/create.php')->only('guest');
-$router->post('/php-test/sessions', 'controllers/sessions/store.php')->only('guest');
+$router->get('/php-test/session', 'controllers/session/create.php')->only('guest');
+$router->post('/php-test/session', 'controllers/session/store.php')->only('guest');
+
+$router->get('/php-test/logout', 'controllers/session/destroy.php')->only('auth');
 
 
 

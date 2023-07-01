@@ -73,7 +73,7 @@
                                     id="user-menu-item-0">Your Profile</a>
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                     id="user-menu-item-1">Settings</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                <a href="/php-test/logout" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                     id="user-menu-item-2">Sign out</a>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                             <a class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/php-test/register">Register</a>
                         </div>
                         <div>
-                            <a class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/php-test/sessions">Log In</a>
+                            <a class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/php-test/session">Log In</a>
                         </div>
                     <?php endif ?>    
                 </div>

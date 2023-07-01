@@ -20,7 +20,7 @@ if (!Validator::string($_POST['password'], 7, 255)) {
 
 if (! empty($errors)) {
 
-    return view("sessions/create.view.php", [
+    return view("session/create.view.php", [
         'heading' => 'Sign In',
         'errors' => $errors
     ]);
@@ -56,7 +56,7 @@ if ($user) {
     $errors['no-account'] = 'No matching account for this email.';
 }
 
-return view("sessions/create.view.php", [
+return view("session/create.view.php", [
     'heading' => 'Sign In',
     'errors' => $errors
 ]);
