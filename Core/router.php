@@ -56,9 +56,7 @@ class Router
 
                 if ($route['middleware']) {
 
-                    $middleware = Middleware::MAP[$route['middleware']];
-
-                    (new $middleware)->handle();
+                    Middleware::resolve($route['middleware']);
                 }
 
                 return require base_path($route['controller']);

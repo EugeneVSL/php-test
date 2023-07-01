@@ -50,10 +50,10 @@ if($user) {
     // create the user
     $db->query('INSERT INTO users(email, password) VALUE(:email, :password)', [
         'email' => $_POST['email'],
-        'password' => $_POST['password']
+        'password' => password_hash($_POST['password'], PASSWORD_BCRYPT)
     ]);
 
-    $_SESSION['user'] = $_POST['email'];
+    login($_POST);
 
     header('location: /php-test');
     exit();

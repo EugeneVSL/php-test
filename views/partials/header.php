@@ -7,6 +7,10 @@
     <title>Landing Page</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 
+
+    <script src="scripts/script.js"></script>
+
+    <link href="styles/output.css" rel="stylesheet">
 </head>
 
 <body class="h-full">

@@ -35,3 +35,9 @@ $router->post('/php-test/note/destroy', 'controllers/notes/destroy.php');
 $router->get('/php-test/register', 'controllers/registration/create.php')->only('guest');
 $router->post('/php-test/register', 'controllers/registration/store.php');
 
+// log in
+$router->get('/php-test/sessions', 'controllers/sessions/create.php')->only('guest');
+$router->post('/php-test/sessions', 'controllers/sessions/store.php')->only('guest');
+
+
+

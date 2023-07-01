@@ -47,3 +47,10 @@ function abort($statusCode = 404)
     die();
 }
 
+function login($user) {
+
+    $_SESSION['user'] = [
+        'email' => $user['email']
+    ];
+}
+
