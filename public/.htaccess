@@ -1,0 +1,22 @@
+
+
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+
+
+DirectoryIndex index.php
+
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine ON
+
+    # Rewrite all other queries to the front controller.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule (.*) /php-test/public/index.php [L]
+    
+</IfModule>
