@@ -4,8 +4,7 @@ use Core\App;
 use Core\Database;
 use Core\Validator;
 
-// hardcode it for now
-$userId = 2;
+$userId = $_SESSION['user']['id'];
 
 $db = App::resolve(Database::class);
 

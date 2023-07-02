@@ -10,9 +10,6 @@ $db = App::resolve(Database::class);
 
 $errors = [];
 
-// hardcode it for now
-$userId = 2;
-
 if (!Validator::string($_POST['body'], 1, 1000)) {
     $errors['body'] = 'A body of no more than 1,000 characters is required.';
 }
@@ -27,7 +24,7 @@ if(! empty($errors)) {
 
 $db->query('INSERT INTO notes(body, user_id) VALUE(:body, :user_id)', [
     'body' => $_POST['body'],
-    'user_id' => $userId
+    'user_id' => $_SESSION['user']['id']
 ]);
 
 header('location: /php-test/notes');

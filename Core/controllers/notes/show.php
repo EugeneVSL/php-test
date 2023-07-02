@@ -4,10 +4,9 @@ use Core\App;
 use Core\Database;
 use Core\Response;
 
-// hardcode it for now
-$userId = 2;
-
 $db = App::resolve(Database::class);
+
+$userId = $_SESSION['user']['id'];
 
 // the note details
 $note = $db->query('select * from notes where id = :id', [

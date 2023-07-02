@@ -66,9 +66,9 @@ class Router
         abort();
     }
 
-    public function only($role) 
+    public function only($key) 
     {
-        $this->routes[array_key_last($this->routes)]['middleware'] = $role;
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
 
         return $this;
     }

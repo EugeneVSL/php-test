@@ -23,7 +23,7 @@ class Middleware
 
         if(! $middleware) {
 
-            throw new Exception("Middleware not identified for key $key");
+            throw new Exception("Middleware not identified for key $key.");
         }
 
         (new $middleware)->handle();

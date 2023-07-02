@@ -4,7 +4,7 @@ use Core\App;
 use Core\Database;
 
 // hardcode it for now
-$userId = 2;
+$userId = $_SESSION['user']['id'];
 
 dd("Here");
 

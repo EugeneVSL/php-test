@@ -50,6 +50,7 @@ function abort($statusCode = 404)
 function login($user) {
 
     $_SESSION['user'] = [
+        'id' => $user['id'],
         'email' => $user['email']
     ];
 }
