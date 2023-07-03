@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 session_start();
 
 require '../Core/functions.php';
@@ -25,3 +27,6 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_POST['_METHOD'] ?? $_SERVER['REQUEST_METHOD'];
 
 $router->route($uri, $method);
+
+// clear out flash session data
+Session::unflash();

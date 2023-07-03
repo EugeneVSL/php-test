@@ -2,9 +2,12 @@
 
 use Core\App;
 use Core\Authenticator;
+use Core\Session;
 use Http\Forms\LoginForm;
 
 require base_path('Core/Validator.php');
+
+$errors = [];
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -18,17 +21,8 @@ if ($form->validate($email, $password)) {
         redirect('/php-test/');
     }
 
-    // collect any errors from authenticator 
-    array_push($errors, $auth->errors());
+    $form->error('not-authenticated', 'No matching  for that email and password.');
 }
 
-// collect any errors from validator 
-array_unshift($errors, $form->errors());
-    
-// if the code reaches this point, there are errors so we redirect  
-// the user to the log in page and display the errors  
-return view("session/create.view.php", [
-
-    'heading' => 'Sign In',
-    'errors' => $errors
-]);
+Session::flash('errors', $form->errors());
+redirect('/php-test/session');
