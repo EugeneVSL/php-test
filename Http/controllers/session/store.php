@@ -23,7 +23,7 @@ if ($form->validate($email, $password)) {
 }
 
 // collect any errors from validator 
-array_push($errors, $form->errors());
+array_unshift($errors, $form->errors());
     
 // if the code reaches this point, there are errors so we redirect  
 // the user to the log in page and display the errors  
