@@ -1,33 +1,36 @@
 <?php
 
-function dd($value) {
-
+function dd($value) 
+{
     echo "<pre>";
     var_dump($value);
     echo "</pre>";
+
     die();
 }
 
-function urlIs($value) {
-
+function urlIs($value) 
+{
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
 function authorize($condition, $status = Core\Response::FORBIDDEN) 
 {
 
-    if(! $condition) {
+    if (! $condition) {
 
         abort($status);
     }
 }
 
-function base_path($path) {
+function base_path($path) 
+{
 
     return dirname(__DIR__) . '/' . $path;
 }
 
-function view($path, $attributes = null) {
+function view($path, $attributes = null) 
+{
 
     if(is_array($attributes)) {
 
@@ -47,28 +50,11 @@ function abort($statusCode = 404)
     die();
 }
 
-function login($user) {
-
-    $_SESSION['user'] = [
-        'id' => $user['id'],
-        'email' => $user['email']
-    ];
-}
-
-function logout() 
+function redirect($path) 
 {
-
-    // set session to null
-    $_SESSION = [];
-
-    // destroy session
-    session_destroy();
-
-    $params = session_get_cookie_params();
-
-    // delete any cookies created in the app
-    setcookie('PHPSESSID', '', time() - 3600, $params['path'], 
-        $params['domain'], $params['secure'], $params['httponly']);
+    header("location: $path");
+    
+    exit();
 }
 
 

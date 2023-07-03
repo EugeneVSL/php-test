@@ -1,57 +1,34 @@
 <?php
 
 use Core\App;
-use Core\Database;
-use Core\Validator;
+use Core\Authenticator;
 use Http\Forms\LoginForm;
 
 require base_path('Core/Validator.php');
 
-
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$db = App::resolve(Database::class);
-
 $form = new LoginForm();
 
-if (! $form->validate($email, $password)) {
+if ($form->validate($email, $password)) {
 
-    return view("session/create.view.php", [
-        'heading' => 'Sign In',
-        'errors' => $form->errors()
-    ]);
-}
+    if ((new Authenticator)->attempt($email, $password)) {
 
-// the note details
-$user = $db->query('select * from users where email = :email', [
-
-    'email' => $_POST['email']
-
-])->find();
-
-
-if ($user) {
-
-    if (password_verify($_POST['password'], $user['password'])) {
-
-        // credentials match, start the session
-        login($user);
-
-        header('location: /php-test/');
-        exit();
-
-    } else {
-
-        $errors['not-authenticated'] = "User was not authenticated succesfuly.";
+        redirect('/php-test/');
     }
 
-} else  {
-
-    $errors['no-account'] = 'No matching account for this email.';
+    // collect any errors from authenticator 
+    array_push($errors, $auth->errors());
 }
 
+// collect any errors from validator 
+array_push($errors, $form->errors());
+    
+// if the code reaches this point, there are errors so we redirect  
+// the user to the log in page and display the errors  
 return view("session/create.view.php", [
+
     'heading' => 'Sign In',
     'errors' => $errors
 ]);
