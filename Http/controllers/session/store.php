@@ -21,7 +21,7 @@ $signedIn = (new Authenticator)->attempt(
 if (! $signedIn) {
 
     $form->error(
-        'not-authenticated', 'No matching  for that email and password.'
+        'not-authenticated', 'No matching for that email and password.'
     )->throw();
 }
 
