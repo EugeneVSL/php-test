@@ -30,8 +30,4 @@ class Session
         unset($_SESSION['_flash']);
     }
 
-    public static function old($key, $default = '') 
-    {
-        return static::get('old')[$key] ?? $default;
-    }
 }

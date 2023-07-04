@@ -12,14 +12,14 @@
                         <a href="/php-test"
                             class="<?= urlIs('/php-test/') ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium' ?>"
                             aria-current="page">Home</a>
-
-                        <?php if ($_SESSION['user'] ?? false) : ?>
                         <a href="/php-test/about"
                             class="<?= urlIs('/php-test/about.php') ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium' ?>">About</a>
-                        <?php endif ?>
                         
+                        <?php if ($_SESSION['user'] ?? false) : ?>
                         <a href="/php-test/notes"
                             class="<?= urlIs('/php-test/notes.php') ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium' ?>">Notes</a>
+                        <?php endif ?>
+
                         <a href="/php-test/contact"
                             class="<?= urlIs('/php-test/contact.php') ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium' ?>">Contact</a>
                         <a href="/php-test/our-mission"

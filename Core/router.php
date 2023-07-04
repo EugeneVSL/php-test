@@ -66,6 +66,11 @@ class Router
         abort();
     }
 
+    public function previousUrl()
+    {
+        return $_SERVER['HTTP_REFERER'];
+    }
+
     public function only($key) 
     {
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;

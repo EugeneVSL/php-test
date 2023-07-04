@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 view('partials/header.php');
 view('partials/navigation.php'); 
 
@@ -43,6 +45,7 @@ view('partials/navigation.php');
 
                     <div>
                         <?php 
+
                             if(isset($errors) && count($errors) != 0) {
 
                                 foreach ($errors as $error) {
