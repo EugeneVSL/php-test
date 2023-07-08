@@ -1,10 +1,11 @@
 <?php
 
 use Core\Session;
+Use Core\Container;
 use Core\ValidationException;
 
 require '../Core/functions.php';
-require base_path('vendor/autoload.php');
+require '../bootstrap.php';
 
 session_start();
 

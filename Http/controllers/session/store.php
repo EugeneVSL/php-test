@@ -1,9 +1,6 @@
 <?php
 
-use Core\App;
 use Core\Authenticator;
-use Core\Session;
-use Core\ValidationException;
 use Http\Forms\LoginForm;
 
 require base_path('Core/Validator.php');

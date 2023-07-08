@@ -1,8 +1,11 @@
 <?php
 
+require base_path('vendor/autoload.php');
+
 use Core\App;
 use Core\Container;
 use Core\Database;
+
 
 $container = new Container();
 

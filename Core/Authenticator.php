@@ -12,6 +12,7 @@ class Authenticator
 
     public function attempt($user, $password)
     {
+
         // the note details
         $user = App::resolve(Database::class)->query('select * from users where email = :email', [
 
@@ -48,7 +49,6 @@ class Authenticator
 
     public function logout() 
     {
-
         // set session to null
         $_SESSION = [];
 
